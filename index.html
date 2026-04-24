@@ -408,7 +408,7 @@ body[data-view="workout"] #bottom-nav{display:none}
 </head>
 <body data-view="intro">
 <div id="toast" class="toast"></div>
-<div class="build-badge">v1.7 &bull; Janine</div>
+<div class="build-badge">v1.8 &bull; Janine</div>
 
 <div id="view-intro" class="view active">
   <div id="petals-container"></div>
@@ -798,6 +798,22 @@ const EXERCISES={
     kneeNote:'✓ Kniefrei: Die Bewegung kommt rein aus der Hüfte. Super für Knie-Stabilität.',
     beginnerKg:'2x 8–14 kg'
   },
+  'Rückenstrecker (Maschine)':{
+    muscles:'Unterer Rücken · Gesäß · Beinbeuger',
+    steps:['Gerät so einstellen, dass das Polster knapp unterhalb der Hüfte endet (Hüfte muss frei abknicken können)','Füße fest einhaken, Knie leicht beugen (nicht komplett durchstrecken)','Mit geradem Rücken den Oberkörper nach unten absenken, bis eine Dehnung im Beinbeuger spürbar ist','Aus der Kraft von Gesäß und unterem Rücken wieder aufrichten','Oben eine gerade Linie bilden – nicht ins Hohlkreuz überstrecken!'],
+    mistakes:'Schwungholen · Überstrecken der Wirbelsäule am obersten Punkt (Hohlkreuz) · Gerät falsch eingestellt (Hüfte blockiert).',
+    breathing:'Beim Absenken einatmen, beim Hochkommen ausatmen.',
+    kneeNote:'✓ Komplett kniefrei, exzellent für die gesamte hintere Kette.',
+    beginnerKg:'Körpergewicht'
+  },
+  'Kurzhantel Bizepscurl':{
+    muscles:'Bizeps (beidköpfiger Armmuskel) · Unterarm',
+    steps:['Stehend, Kurzhanteln hängen seitlich mit Untergriff (Handflächen nach vorne)','Ellenbogen FEST seitlich am Körper – das ist der Drehpunkt, nicht die Schulter!','Kurzhantel gleichmäßig nach oben curlen','Beim Hochkommen Handgelenk leicht nach außen drehen','Oben kurz Bizeps anspannen','Sehr langsam absenken – 3 Sek. runter'],
+    mistakes:'Ellenbogen wandert nach vorne/hinten · Schwung mit dem Oberkörper · Nur halbe Bewegung nach unten.',
+    breathing:'Beim Hochcurlen ausatmen, beim Senken einatmen.',
+    beginnerKg:'5–10 kg pro Hand',
+    intermediateKg:'10–16 kg pro Hand'
+  },
   'Pallof Press mit Band':{
     muscles:'Core (Anti-Rotation) · Schulter · Rumpfstabilisierung',
     steps:['Band auf Brusthöhe seitlich am Türrahmen befestigen','Schulterbreit von der Tür wegtreten, quer zum Rahmen stehen','Band mit beiden Händen vor die Brust halten','Bauch fest anspannen, Hüfte gerade','Band gerade nach vorne strecken und 2–3 Sek. halten','Zurück zur Brust – Rumpf zieht das Band, nicht die Arme','10 Wdh., dann Seite wechseln'],
@@ -842,6 +858,20 @@ const EXERCISES={
     breathing:'Beim Hochdrücken ausatmen.',
     kneeNote:'✓ Sehr knieschonend: Durch den Schritt nach hinten gibt es kaum Scherkräfte auf der vorderen Patella.',
     beginnerKg:'Körpergewicht → 2x 4–8 kg'
+  },
+  'Glute Bridge':{
+    muscles:'Gesäß (Gluteus maximus & medius) · Hintere Oberschenkel · Core',
+    steps:['Rückenlage auf der Matte, Knie angewinkelt (90°)','Füße flach auf dem Boden, hüftbreit, Fersen nah am Gesäß','Arme seitlich, Handflächen nach unten','Bauch anspannen, dann Hüfte kraftvoll nach oben drücken','Oben: Körper bildet eine gerade Linie von Schulter bis Knie','Gesäß oben 2 Sek. fest anspannen – wirklich drücken!','Langsam absenken – Gesäß kurz Boden berühren, sofort wieder hoch'],
+    mistakes:'Hohlkreuz oben · Hüfte fällt beim Senken komplett auf den Boden (Spannung halten!) · Gesäß nicht aktiv anspannen.',
+    breathing:'Beim Hochdrücken ausatmen, beim Absenken einatmen.',
+    kneeNote:'✓ Kniefrei: keine Belastung der Kniescheibe.',
+    beginnerKg:'Körpergewicht → Resistance Band über Hüfte'
+  },
+  'Trizeps Dips an der Bank':{
+    muscles:'Trizeps · Untere Brust · Vordere Schulter',
+    steps:['Hände schulterbreit auf der Hantelbank, Finger zeigen nach vorne','Beine gestreckt oder Knie angewinkelt (leichter)','Rücken nahe an der Bank – nicht weit davor!','Langsam absenken: Ellenbogen 90° beugen','Ellenbogen zeigen gerade nach hinten – nicht nach außen spreizen','Hochdrücken bis Arme fast gestreckt sind'],
+    mistakes:'Weit nach vorne lehnen (Schulterbelastung) · Ellenbogen nach außen · Zu tief absenken bei Schulter-Problemen.',
+    breathing:'Absenken einatmen, hochdrücken ausatmen.'
   },
   'Face Pulls mit Band':{
     muscles:'Hintere Schulter · Rotatorenmanschette · Nacken',
@@ -1219,17 +1249,21 @@ const PLAN={
     {name:'Box Squat',sets:3,reps:'8\u201312',rest:90},
     {name:'Langhantel Bankdrücken',sets:3,reps:'8\u201312',rest:0},
     {name:'Einarmiges KH-Rudern',sets:3,reps:'10\u201312',rest:90},
-    {name:'Romanian Deadlift (KH)',sets:3,reps:'10\u201312',rest:0},
-    {name:'Pallof Press mit Band',sets:3,reps:'10 pro Seite',rest:60},
+    {name:'Romanian Deadlift (KH)',sets:3,reps:'10\u201312',rest:90},
+    {name:'Rückenstrecker (Maschine)',sets:3,reps:'12\u201315',rest:0},
+    {name:'Kurzhantel Bizepscurl',sets:3,reps:'12\u201315',rest:90},
+    {name:'Pallof Press mit Band',sets:3,reps:'10 pro Seite',rest:0},
     {name:'Dead Bugs',sets:3,reps:'12 pro Seite',rest:60}
   ]},
   B:{name:'Ganzkörper B – Heben & Vertikal',focus:'Beine & Push/Pull',exercises:[
     {name:'Kurzhantel Sumo Deadlift',sets:3,reps:'8\u201312',rest:90},
     {name:'Schulterdrücken mit KH',sets:3,reps:'8\u201312',rest:0},
     {name:'Band Latzug',sets:3,reps:'12\u201315',rest:90},
-    {name:'Reverse Lunges',sets:3,reps:'10 pro Seite',rest:0},
-    {name:'Dead Bugs',sets:3,reps:'12 pro Seite',rest:60},
-    {name:'Face Pulls mit Band',sets:3,reps:'15',rest:60}
+    {name:'Reverse Lunges',sets:3,reps:'10 pro Seite',rest:90},
+    {name:'Glute Bridge',sets:3,reps:'12\u201315',rest:0},
+    {name:'Trizeps Dips an der Bank',sets:3,reps:'10\u201315',rest:90},
+    {name:'Face Pulls mit Band',sets:3,reps:'15',rest:0},
+    {name:'Dead Bugs',sets:3,reps:'12 pro Seite',rest:60}
   ]}
 };
 
@@ -1296,12 +1330,13 @@ function buildExContent(ex, idx, plan, ci, ph){
   } else {
     const ls=getLastSess(activeDay,ex.name);
     const tw=getData('testWeights',{});const testKg=tw[ex.name]||null;
-    const lsHint=ls?'<div class="last-session-hint">\ud83d\udd70 Letztes Mal: '+fmtDate(ls.date)+'</div>':(testKg?'<div class="last-session-hint">\ud83d\udd2c Zielgewicht: '+testKg+' kg</div>':'');
-    const bgHint=(!ls&&!testKg&&info.beginnerKg)?'<div class="beginner-hint">\ud83d\udca1 Anfänger: '+info.beginnerKg+'</div>':'';
+    const lsHint=ls?'<div class="last-session-hint">\ud83d\udd70 Letztes Mal: '+fmtDate(ls.date)+'</div>':(testKg!==null?'<div class="last-session-hint">\ud83d\udd2c Zielgewicht: '+(testKg===0?'Körpergewicht':testKg+' kg')+'</div>':'');
+    const bgHint=(!ls&&testKg===null&&info.beginnerKg)?'<div class="beginner-hint">\ud83d\udca1 Anfänger: '+info.beginnerKg+'</div>':'';
     const sets=Array.from({length:ex.sets}).map((_,s)=>{
-      const lkg=(s===0&&testKg)?testKg:(ls&&ls.sets&&ls.sets[s]?ls.sets[s].kg:'');
+      const lkg=(s===0&&testKg!==null)?testKg:(ls&&ls.sets&&ls.sets[s]?ls.sets[s].kg:null);
       const lrp=ls&&ls.sets&&ls.sets[s]?ls.sets[s].reps:'';
-      return '<div class="set-row" id="sr-'+idx+'-'+s+'"><div class="set-num">'+(s+1)+'</div><div class="set-inputs"><div class="set-fw"><input class="set-field" type="number" inputmode="decimal" id="kg-'+idx+'-'+s+'" placeholder="'+(lkg||'\u2014')+'" value="'+(lkg||'')+'"><div class="set-fl">kg</div></div><div class="set-fw"><input class="set-field" type="number" inputmode="numeric" id="reps-'+idx+'-'+s+'" placeholder="'+(lrp||ex.reps||'\u2014')+'" value="'+(lrp||'')+'"><div class="set-fl">Wdh.</div></div></div><button class="set-check" id="chk-'+idx+'-'+s+'" onclick="completeSet('+idx+','+s+','+(ex.rest||0)+')">&#9675;</button></div>';
+      const lkgStr = lkg === 0 ? '0' : (lkg || '\u2014');
+      return '<div class="set-row" id="sr-'+idx+'-'+s+'"><div class="set-num">'+(s+1)+'</div><div class="set-inputs"><div class="set-fw"><input class="set-field" type="number" inputmode="decimal" id="kg-'+idx+'-'+s+'" placeholder="'+lkgStr+'" value="'+(lkg!==null?lkg:'')+'"><div class="set-fl">kg</div></div><div class="set-fw"><input class="set-field" type="number" inputmode="numeric" id="reps-'+idx+'-'+s+'" placeholder="'+(lrp||ex.reps||'\u2014')+'" value="'+(lrp||'')+'"><div class="set-fl">Wdh.</div></div></div><button class="set-check" id="chk-'+idx+'-'+s+'" onclick="completeSet('+idx+','+s+','+(ex.rest||0)+')">&#9675;</button></div>';
     }).join('');
     body=lsHint+bgHint+'<div class="sets-list">'+sets+'</div>';
   }
@@ -1364,8 +1399,8 @@ function completeSet(exIdx,setIdx,rest){
   let kgVal = kf ? kf.value : '';
   let repsVal = rf ? rf.value : '';
 
-  if(!kgVal && kf && kf.placeholder && kf.placeholder !== '\u2014') kgVal = kf.placeholder;
-  if(!repsVal && rf && rf.placeholder && rf.placeholder !== '\u2014') repsVal = rf.placeholder;
+  if(kgVal === '' && kf && kf.placeholder && kf.placeholder !== '\u2014') kgVal = kf.placeholder;
+  if(repsVal === '' && rf && rf.placeholder && rf.placeholder !== '\u2014') repsVal = rf.placeholder;
 
   const kg=parseFloat(String(kgVal).replace(',','.'))||0;
   const reps=parseInt(String(repsVal))||0;
@@ -1382,8 +1417,8 @@ function completeSet(exIdx,setIdx,rest){
   if(chk){chk.innerHTML='&#10003;';chk.classList.add('done');}
   if(row)row.classList.add('completed');
   
-  if (kf && !kf.value && kg > 0) kf.value = kg;
-  if (rf && !rf.value && reps > 0) rf.value = reps;
+  if (kf && kf.value === '' && kg >= 0) kf.value = kg;
+  if (rf && rf.value === '' && reps > 0) rf.value = reps;
   
   if(kf)kf.disabled=true;if(rf)rf.disabled=true;
   if(rest>0)startTimer(rest);
@@ -1418,8 +1453,8 @@ function renderRpeWeightRecs(rpe){
   allEx.forEach((ex, idx)=>{
     if(!ex.sets)return;
     let lastKg=null;
-    for(let s=0;s<ex.sets;s++){const v=wkData[ex.name]&&wkData[ex.name][s]?wkData[ex.name][s].kg:null;if(v&&v>0){lastKg=v;break;}}
-    if(!lastKg)return;
+    for(let s=0;s<ex.sets;s++){const v=wkData[ex.name]&&wkData[ex.name][s]?wkData[ex.name][s].kg:null;if(v!==null){lastKg=v;break;}}
+    if(lastKg===null || lastKg===0)return; // Keine Empfehlung für 0 kg (Körpergewicht)
     const rec=Math.round(lastKg*r.delta/2.5)*2.5;
     if(rec!==lastKg){
       const btnHtml = '<button id="apply-rec-'+idx+'" class="btn-rec-apply" onclick="applyWeightRec(\''+ex.name.replace(/'/g, "\\'")+'\', '+rec+', '+idx+')">+ \u00dcbernehmen</button>';
@@ -1458,13 +1493,13 @@ function endSession(){
         let kgVal = kf ? kf.value : '';
         let repsVal = rf ? rf.value : '';
         
-        if(isDone && !kgVal && kf && kf.placeholder && kf.placeholder !== '\u2014') kgVal = kf.placeholder;
-        if(isDone && !repsVal && rf && rf.placeholder && rf.placeholder !== '\u2014') repsVal = rf.placeholder;
+        if(isDone && kgVal==='' && kf && kf.placeholder && kf.placeholder !== '\u2014') kgVal = kf.placeholder;
+        if(isDone && repsVal==='' && rf && rf.placeholder && rf.placeholder !== '\u2014') repsVal = rf.placeholder;
         
         const kg=parseFloat(String(kgVal).replace(',','.'))||0;
         const reps=parseInt(String(repsVal))||0;
         
-        if(kg > 0 || reps > 0 || isDone){
+        if(kgVal !== '' || repsVal !== '' || isDone){
           if(!wkData[ex.name]) wkData[ex.name]={};
           wkData[ex.name][s]={kg,reps};
           if(isDone) doneS++;
@@ -1504,9 +1539,12 @@ function finishWorkoutWithRpe(){
     if(pendingRecs[ex.name]) {
       tw[ex.name] = pendingRecs[ex.name];
     } else {
-      let maxKg=0;
-      for(let s=0;s<ex.sets;s++){const v=wkData[ex.name]&&wkData[ex.name][s]?wkData[ex.name][s].kg:0;if(v>maxKg)maxKg=v;}
-      if(maxKg>0) tw[ex.name]=maxKg; 
+      let maxKg=null;
+      for(let s=0;s<ex.sets;s++){
+        const v=wkData[ex.name]&&wkData[ex.name][s]!==undefined?wkData[ex.name][s].kg:null;
+        if(v!==null && (maxKg===null || v>maxKg)) maxKg=v;
+      }
+      if(maxKg!==null) tw[ex.name]=maxKg; 
     }
   });
   setData('testWeights', tw);
@@ -1555,7 +1593,6 @@ function startTimer(sec){
   const ov=document.getElementById('timer-overlay');const ne=document.getElementById('timer-num');const arc=document.getElementById('timer-arc');
   ov.classList.add('show');clearInterval(timerInterval);
   
-  // AudioContext beim Klick einmalig aktivieren (Browser-Sicherheit)
   if(!actx) actx = new (window.AudioContext || window.webkitAudioContext)();
   if(actx.state === 'suspended') actx.resume();
 
@@ -1563,20 +1600,18 @@ function startTimer(sec){
     ne.textContent=timerRem;
     arc.style.strokeDashoffset=484*(1-timerRem/timerTotal);
     
-    // Töne bei 3, 2, 1 und 0 Sekunden
-    if(timerRem > 0 && timerRem <= 3) playBeep(440, 0.2); // kurzes Piepen
-    else if(timerRem === 0) playBeep(880, 0.4); // höherer, längerer Ton
+    if(timerRem > 0 && timerRem <= 3) playBeep(440, 0.2); 
+    else if(timerRem === 0) playBeep(880, 0.4); 
 
     if(timerRem<=0){
       clearInterval(timerInterval);
-      // Kurze Verzögerung beim Schließen, damit man die 0 sieht und den Ton hört
       setTimeout(() => ov.classList.remove('show'), 500); 
       if(navigator.vibrate)navigator.vibrate([200,100,200]);
     } else {
       timerRem--;
     }
   }
-  tick(); // Sofort einmal ausführen
+  tick(); 
   timerInterval=setInterval(tick,1000);
 }
 
@@ -1776,10 +1811,11 @@ function startInitialTest(){
       '<div class="test-suggest">\ud83d\udca1 '+ex.suggest+'</div>'+
       '<div class="test-desc">'+ex.hint+'</div>'+
       '<div class="test-input-row">'+
-        '<div class="test-field-wrap"><input class="test-field" type="number" inputmode="decimal" id="test-kg-'+i+'" placeholder="\u2014" value="'+(saved||'')+'" style="font-size:24px"><div class="test-field-lbl">kg</div></div>'+
+        '<div class="test-field-wrap"><input class="test-field" type="number" inputmode="decimal" id="test-kg-'+i+'" placeholder="\u2014" value="'+(saved!==undefined?saved:'')+'" style="font-size:24px"><div class="test-field-lbl">kg</div></div>'+
         '<div class="test-field-wrap"><input class="test-field" type="number" inputmode="numeric" id="test-reps-'+i+'" placeholder="8" value="" style="font-size:24px"><div class="test-field-lbl">Wdh. geschafft</div></div>'+
       '</div>'+
-      (saved?'<div style="font-size:11px;color:var(--text-muted);margin-top:-6px;margin-bottom:8px">Letzter Test: '+saved+' kg</div>':'')+
+      '<button class="btn-outline" style="width:100%; margin-bottom:14px; border-color:var(--border2); color:var(--text-mid)" onclick="document.getElementById(\'test-kg-'+i+'\').value=\'0\'">Nur Körpergewicht (0 kg)</button>'+
+      (saved!==undefined?'<div style="font-size:11px;color:var(--text-muted);margin-top:-6px;margin-bottom:8px">Letzter Test: '+(saved===0?'Körpergewicht':saved+' kg')+'</div>':'')+
     '</div>';
   }).join('');
   document.getElementById('test-done').style.display='none';
@@ -1796,9 +1832,10 @@ function updateTestProg(){
 }
 
 function testNext(){
-  const kg=parseFloat(String(document.getElementById('test-kg-'+testIdx)?.value||'').replace(',','.'))||null;
+  const rawKg=document.getElementById('test-kg-'+testIdx)?.value;
+  const kg=rawKg===''?null:parseFloat(rawKg.replace(',','.'));
   const reps=parseInt(document.getElementById('test-reps-'+testIdx)?.value||'')||null;
-  if(kg)testData[TEST_EXERCISES[testIdx].name]={kg,reps:reps||8};
+  if(kg!==null)testData[TEST_EXERCISES[testIdx].name]={kg,reps:reps||8};
   if(testIdx>=TEST_EXERCISES.length-1){finishInitialTest();return;}
   document.getElementById('test-step-'+testIdx).classList.remove('active');
   testIdx++;
@@ -1817,7 +1854,8 @@ function testPrev(){
 }
 
 function finishInitialTest(){
-  const saved=getData('testWeights',{});Object.assign(saved,testData);
+  const saved=getData('testWeights',{});
+  Object.keys(testData).forEach(k => { saved[k] = testData[k].kg; });
   setData('testWeights',saved);
   document.getElementById('test-nav').style.display='none';
   document.getElementById('test-steps-container').style.display='none';
